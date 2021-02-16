@@ -1,0 +1,22 @@
+<div class="container text-center">
+<h3 class="alert alert-success font-weight-bold">Employee History </h3>
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">S.No</th>
+      <th scope="col">Employee ID</th>
+      <th scope="col">History</th>
+    </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of distinctThings; let indexOfelement=index;">
+        <th scope="row">{{indexOfelement+1}}</th>
+        <td>{{item.emp_id}}</td>
+        <td><a routerLink="/history" (click)="getEmpId(item.emp_id)"><span class="material-icons" matTooltip="Show Details">
+          visibility
+          </span></a></td>
+      </tr>
+      </tbody>
+</table>
+</div>

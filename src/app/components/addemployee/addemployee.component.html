@@ -1,0 +1,189 @@
+<div class="container">
+  <div class="text-center">
+    <h1 class="alert alert-success"> Add Employee</h1>
+  </div>
+  <form [formGroup]="addEmployee" class="data_container text-center" (ngSubmit)="saveEmployee(addEmployee)">
+    <div class="row">
+      <div class="col">
+        <mat-form-field appearance="fill">
+          <mat-label>Employee Id</mat-label>
+          <input formControlName="emp_id" matInput placeholder="Enter EmployeeID">
+          <!-- <mat-error *ngIf="addEmployee.get('empId')?.touched && addEmployee.get('empId')?.hasError('required')">
+           Employee ID is required
+          </mat-error> -->
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <mat-form-field appearance="fill">
+          <mat-label>First Name</mat-label>
+          <input matInput  formControlName="first_name" placeholder="Enter FirstName">
+          <!-- <mat-error *ngIf="addEmployee.get('first_name')?.touched && addEmployee.get('first_name')?.hasError('required')">
+            First Name is required
+           </mat-error>
+           <mat-error *ngIf="addEmployee.get('first_name')?.touched && addEmployee.get('first_name')?.hasError('minlength')">
+            First Name must be 5 character
+        </mat-error>
+        <mat-error *ngIf="addEmployee.get('first_name')?.touched && addEmployee.get('first_name')?.hasError('maxlength')">
+          Input between 1 to 50 characters!!
+
+      </mat-error> -->
+        </mat-form-field>
+      </div>
+      <div class="col">
+        <mat-form-field appearance="fill">
+          <mat-label>Last Name</mat-label>
+          <input matInput placeholder="Enter LastName">
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <mat-form-field appearance="fill">
+          <mat-label>Choose a date</mat-label>
+          <input matInput [matDatepicker]="picker">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+      </div>
+      <div class="col">
+        <mat-form-field appearance="fill">
+          <mat-label>Select Gender</mat-label>
+          <mat-select>
+            <mat-option *ngFor="let item of genderList" value="{{item}}">{{item}}</mat-option>
+
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+
+        <mat-form-field appearance="fill">
+          <mat-label>Mobile No.</mat-label>
+          <input matInput placeholder="Enter MobileNo.">
+        </mat-form-field>
+      </div>
+      <div class="col">
+        <mat-form-field appearance="fill">
+          <mat-label>Email Id</mat-label>
+          <input matInput placeholder="Enter Email">
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <mat-form-field appearance="fill">
+          <mat-label>Office email</mat-label>
+          <input matInput placeholder="Enter offical email">
+        </mat-form-field>
+      </div>
+      <div class="col">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+
+        <mat-form-field appearance="fill">
+          <mat-label>Joining Date</mat-label>
+          <input matInput placeholder="Enter Joining Date">
+          <input matInput [matDatepicker]="picker">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      </div>
+      <div class="col" >
+        <mat-form-field appearance="fill">
+          <mat-label>Employee Level</mat-label>
+          <mat-select>
+            <mat-option *ngFor="let item of employeeLevel" value="{{item}}">{{item}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+
+        <mat-form-field appearance="fill">
+          <mat-label>Post</mat-label>
+          <input matInput placeholder="Enter Post">
+        </mat-form-field>
+
+      </div>
+      <div class="col">
+
+        <mat-form-field appearance="fill">
+          <mat-label>BloodGroup</mat-label>
+          <mat-select>
+            <mat-option *ngFor="let item of bloodGroup" value="{{item}}">{{item}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+
+        <mat-form-field appearance="fill">
+          <mat-label>BasicPay</mat-label>
+          <input matInput placeholder="Enter Post">
+        </mat-form-field>
+
+      </div>
+      <div class="col">
+
+        <mat-form-field appearance="fill">
+          <mat-label>House allowance</mat-label>
+          <input matInput placeholder="Enter House allowance">
+        </mat-form-field>
+
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+
+        <mat-form-field appearance="fill">
+          <mat-label>Pan Card No</mat-label>
+          <input matInput placeholder="Enter Pan Card No">
+        </mat-form-field>
+
+      </div>
+      <div class="col">
+
+        <mat-form-field appearance="fill">
+          <mat-label>Aadhaar card no
+          </mat-label>
+          <input matInput placeholder="Enter Aadhaar card no
+          ">
+        </mat-form-field>
+
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+
+        <mat-form-field appearance="fill">
+          <mat-label>Permanent address </mat-label>
+          <textarea matInput></textarea>
+        </mat-form-field>
+
+      </div>
+      <div class="col">
+
+        <mat-form-field appearance="fill">
+          <mat-label>Present address
+          </mat-label>
+          <textarea matInput></textarea>
+        </mat-form-field>
+
+
+      </div>
+    </div>
+    <button mat-raised-button color="warn" class="m-2">Save</button>
+  </form>
+</div>

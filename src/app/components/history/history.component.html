@@ -1,0 +1,22 @@
+<div class="container text-center">
+  <h3 class="alert alert-success font-weight-bold">Employee Working  History of {{empId}} </h3>
+
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Organization</th>
+        <th scope="col">Period</th>
+        <th scope="col">Location</th>
+        <th scope="col">Post</th>
+      </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of empList">
+        <td>{{item.organization_name}}</td>
+        <td>{{item.from_date | date:"MM/yyyy"}}~{{item.until_date | date: "MM/yyyy"}}</td>
+        <td>{{item.location}}({{item.country}})</td>
+        <td>{{item.post}}</td>
+      </tr>
+        </tbody>
+      </table>
+</div>
